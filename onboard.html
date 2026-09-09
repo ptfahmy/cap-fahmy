@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coaching intake — Cap Fahmy</title>
+    <meta
+      name="description"
+      content="Cap Fahmy async coaching intake: waiver, questionnaire, movement screen, and InstaPay."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="onboard-page">
+    <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
+
+    <header class="site-header">
+      <div class="shell header-inner">
+        <a class="brand" href="index.html" aria-label="Cap Fahmy home">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span class="brand-name">Cap Fahmy</span>
+        </a>
+        <div class="header-actions">
+          <button
+            type="button"
+            class="lang-toggle"
+            id="lang-toggle"
+            aria-label="Switch language"
+          >
+            عربي
+          </button>
+          <a class="btn btn-ghost btn-sm" href="index.html">←</a>
+        </div>
+      </div>
+    </header>
+
+    <main id="main" class="onboard-main">
+      <div class="shell">
+        <header class="section-head" style="margin-bottom: 1.5rem">
+          <p class="eyebrow">Cap Fahmy</p>
+          <h2 data-i18n="onboard.title">Coaching intake</h2>
+          <p class="section-lead" data-i18n="onboard.lead">
+            Four short steps. The waiver must be signed before you continue —
+            coaching stays ethical and within scope.
+          </p>
+        </header>
+
+        <div class="progress" aria-hidden="true">
+          <div class="progress-step is-current"><span></span></div>
+          <div class="progress-step"><span></span></div>
+          <div class="progress-step"><span></span></div>
+          <div class="progress-step"><span></span></div>
+        </div>
+
+        <div class="form-panel">
+          <div id="onboard-alert" class="alert" hidden></div>
+
+          <form id="onboard-form" novalidate>
+            <!-- Step 0: Waiver -->
+            <section class="step-panel" data-step="0">
+              <h2 data-i18n="waiver.title">Waiver &amp; scope disclaimer</h2>
+              <p class="lead" data-i18n="waiver.lead">
+                Please read carefully. You cannot continue until you acknowledge
+                and sign.
+              </p>
+
+              <div class="waiver-box">
+                <h3 data-i18n="waiver.bodyTitle">Cap Fahmy coaching agreement</h3>
+                <p data-i18n="waiver.p1">
+                  Ahmed Fahmy (“Cap Fahmy”) provides fitness coaching and
+                  exercise programming. This is not medical advice,
+                  physiotherapy, diagnosis, or treatment.
+                </p>
+                <p data-i18n="waiver.p2">
+                  If you experience red-flag symptoms (for example: unexplained
+                  chest pain, dizziness, sudden severe pain, neurological
+                  symptoms, or other concerning signs), stop training and seek
+                  appropriate medical care. Cap Fahmy will refer out of scope
+                  issues.
+                </p>
+                <p data-i18n="waiver.p3">By signing, you confirm that:</p>
+                <ul>
+                  <li data-i18n="waiver.li1">
+                    You are voluntarily participating in a fitness coaching
+                    program.
+                  </li>
+                  <li data-i18n="waiver.li2">
+                    You understand training involves physical risk and you accept
+                    responsibility for your participation.
+                  </li>
+                  <li data-i18n="waiver.li3">
+                    You will disclose relevant health history truthfully on the
+                    intake form.
+                  </li>
+                  <li data-i18n="waiver.li4">
+                    You understand Cap Fahmy coaches within fitness scope and may
+                    decline or pause coaching when referral is appropriate.
+                  </li>
+                </ul>
+              </div>
+
+              <label class="check">
+                <input type="checkbox" id="waiver-ack-1" />
+                <span data-i18n="waiver.check1"
+                  >I have read and understand the waiver and scope
+                  disclaimer.</span
+                >
+              </label>
+              <label class="check">
+                <input type="checkbox" id="waiver-ack-2" />
+                <span data-i18n="waiver.check2"
+                  >I agree that this is fitness coaching, not medical care.</span
+                >
+              </label>
+
+              <div class="field">
+                <label for="waiver-name" data-i18n="waiver.name"
+                  >Full legal name</label
+                >
+                <input id="waiver-name" name="waiverName" type="text" required />
+              </div>
+              <div class="field">
+                <label for="waiver-date" data-i18n="waiver.date">Date</label>
+                <input id="waiver-date" name="waiverDate" type="date" required />
+              </div>
+
+              <div class="form-actions">
+                <button type="button" class="btn btn-primary" data-next>
+                  <span data-i18n="waiver.continue">Sign &amp; continue</span>
+                </button>
+              </div>
+            </section>
+
+            <!-- Step 1: Intake -->
+            <section class="step-panel" data-step="1" hidden>
+              <h2 data-i18n="intake.title">Intake questionnaire</h2>
+              <p class="lead" data-i18n="intake.lead">
+                Plain questions so programming can be individualized. Answer
+                honestly — cookie-cutter plans are not how Cap Fahmy works.
+              </p>
+
+              <div class="field">
+                <label for="intake-name" data-i18n="intake.name"
+                  >Preferred name</label
+                >
+                <input id="intake-name" type="text" required />
+              </div>
+              <div class="field">
+                <label for="intake-email" data-i18n="intake.email">Email</label>
+                <input id="intake-email" type="email" required />
+              </div>
+              <div class="field">
+                <label for="intake-phone" data-i18n="intake.phone"
+                  >WhatsApp number</label
+                >
+                <input id="intake-phone" type="tel" required />
+              </div>
+              <div class="field">
+                <label for="intake-city" data-i18n="intake.city"
+                  >City / country</label
+                >
+                <input id="intake-city" type="text" />
+              </div>
+              <div class="field">
+                <label for="intake-goal" data-i18n="intake.goal"
+                  >Primary goal</label
+                >
+                <textarea
+                  id="intake-goal"
+                  data-i18n-placeholder="intake.goal.placeholder"
+                  required
+                ></textarea>
+              </div>
+              <div class="field">
+                <label for="intake-history" data-i18n="intake.history"
+                  >Training history</label
+                >
+                <textarea
+                  id="intake-history"
+                  data-i18n-placeholder="intake.history.placeholder"
+                ></textarea>
+              </div>
+              <div class="field">
+                <label for="intake-health" data-i18n="intake.health"
+                  >Relevant health notes / injuries</label
+                >
+                <textarea
+                  id="intake-health"
+                  data-i18n-placeholder="intake.health.placeholder"
+                ></textarea>
+              </div>
+              <div class="field">
+                <label for="intake-equipment" data-i18n="intake.equipment"
+                  >Available equipment</label
+                >
+                <input
+                  id="intake-equipment"
+                  type="text"
+                  data-i18n-placeholder="intake.equipment.placeholder"
+                />
+              </div>
+              <div class="field">
+                <label for="intake-schedule" data-i18n="intake.schedule"
+                  >Days &amp; time you can train</label
+                >
+                <input id="intake-schedule" type="text" />
+              </div>
+
+              <div class="form-actions">
+                <button type="button" class="btn btn-ghost" data-back>
+                  <span data-i18n="intake.back">Back</span>
+                </button>
+                <button type="button" class="btn btn-primary" data-next>
+                  <span data-i18n="intake.continue"
+                    >Continue to movement screen</span
+                  >
+                </button>
+              </div>
+            </section>
+
+            <!-- Step 2: Video -->
+            <section class="step-panel" data-step="2" hidden>
+              <h2 data-i18n="video.title">Video movement screen</h2>
+              <p class="lead" data-i18n="video.lead">
+                Film these movements in good light, full body in frame, side or
+                front as noted. Upload what you have — quality over perfection.
+              </p>
+
+              <ul class="movement-list">
+                <li data-i18n="video.m1">
+                  Standing posture — front &amp; side (10–15 sec each)
+                </li>
+                <li data-i18n="video.m2">
+                  Bodyweight squat — 5 slow reps, side view
+                </li>
+                <li data-i18n="video.m3">
+                  Hinge / Romanian deadlift pattern — 5 slow reps (broomstick OK)
+                </li>
+                <li data-i18n="video.m4">
+                  Overhead reach / shoulder flexion — front view
+                </li>
+                <li data-i18n="video.m5">
+                  Single-leg balance — 10 sec each side
+                </li>
+              </ul>
+
+              <div class="upload-zone">
+                <strong data-i18n="video.upload">Upload movement videos</strong>
+                <input
+                  id="movement-files"
+                  type="file"
+                  accept="video/*"
+                  multiple
+                />
+                <p class="hint" data-i18n="video.hint">
+                  MVP: files stay on your device for now. In production they will
+                  upload securely for review. You can also send via WhatsApp after
+                  payment.
+                </p>
+              </div>
+
+              <div class="form-actions">
+                <button type="button" class="btn btn-ghost" data-back>
+                  <span data-i18n="intake.back">Back</span>
+                </button>
+                <button type="button" class="btn btn-primary" data-next>
+                  <span data-i18n="video.continue">Continue to payment</span>
+                </button>
+              </div>
+            </section>
+
+            <!-- Step 3: Payment -->
+            <section class="step-panel" data-step="3" hidden>
+              <h2 data-i18n="pay.title">Confirm &amp; pay</h2>
+              <p class="lead" data-i18n="pay.lead">
+                One local payment method to start: InstaPay. After confirmation,
+                Cap Fahmy sets up your living Sheet/Doc and WhatsApp check-in
+                rhythm.
+              </p>
+
+              <p>
+                <span data-i18n="pay.selected">Selected tier</span>:
+                <strong id="selected-tier-label">Standard</strong>
+              </p>
+
+              <div class="payment-card">
+                <strong data-i18n="pay.instapay">InstaPay</strong>
+                <p data-i18n="pay.instapay.detail">
+                  Transfer to the InstaPay handle shared after you submit. Include
+                  your full name in the note. Cap Fahmy confirms manually for this
+                  MVP.
+                </p>
+              </div>
+
+              <label class="check">
+                <input type="checkbox" id="pay-ack" />
+                <span data-i18n="pay.confirm"
+                  >I understand payment is confirmed manually for this MVP, and
+                  my program starts after Cap Fahmy verifies transfer + signed
+                  waiver.</span
+                >
+              </label>
+
+              <div class="form-actions">
+                <button type="button" class="btn btn-ghost" data-back>
+                  <span data-i18n="intake.back">Back</span>
+                </button>
+                <button type="button" class="btn btn-primary" data-next>
+                  <span data-i18n="pay.submit">Submit intake</span>
+                </button>
+              </div>
+            </section>
+
+            <!-- Step 4: Done -->
+            <section class="step-panel success-panel" data-step="4" hidden>
+              <div class="mark" aria-hidden="true">✓</div>
+              <h2 data-i18n="done.title">Intake received</h2>
+              <p data-i18n="done.body">
+                Thank you. Your waiver is on file and your intake is ready for
+                review. Complete InstaPay if you have not yet, then send a
+                WhatsApp message so Cap Fahmy can confirm and share your living
+                program.
+              </p>
+              <p class="hint" data-i18n="done.next">
+                Next: movement video review → shared Sheet/Doc → weekly WhatsApp
+                check-in form.
+              </p>
+              <a
+                class="btn btn-primary whatsapp-link"
+                href="https://wa.me/20XXXXXXXXXX?text=Hi%20Cap%20Fahmy%20—%20I%20submitted%20my%20coaching%20intake."
+                target="_blank"
+                rel="noopener noreferrer"
+                data-i18n="pay.whatsapp"
+                >Message Cap Fahmy on WhatsApp</a
+              >
+            </section>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-inner">
+        <div>
+          <p class="brand-name">Cap Fahmy</p>
+          <p class="footer-slogan" data-i18n="hero.slogan">
+            Strong today, Independent tomorrow
+          </p>
+        </div>
+        <p class="footer-meta" data-i18n="footer.meta">
+          Fitness coaching · Not medical advice · Alexandria, Egypt
+        </p>
+      </div>
+    </footer>
+
+    <script src="i18n.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
