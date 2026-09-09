@@ -73,10 +73,10 @@ window.CapFahmyI18n = {
     "library.eyebrow": "Exercise library",
     "library.title": "Train with Cap Fahmy’s demos",
     "library.lead":
-      "First playlist connected from your YouTube. More lists (warm-up, dumbbells, machines) can be added the same way.",
-    "library.playlist1.title": "Neck vertebrae mobility and stretch",
+      "Playlists from Cap Fahmy’s YouTube — demos clients can follow. More lists (warm-up, dumbbells, machines) can be added the same way.",
+    "library.playlist1.title": "Static stretches",
     "library.playlist1.body":
-      "Watch demos in order, or open the full playlist on YouTube.",
+      "Full playlist — browse videos in the player, or open it on YouTube.",
     "library.open": "Open on YouTube",
     "cta.title": "Ready to train for the long game?",
     "cta.body":
@@ -256,10 +256,10 @@ window.CapFahmyI18n = {
     "library.eyebrow": "مكتبة التمارين",
     "library.title": "تمرّن مع فيديوهات Cap Fahmy",
     "library.lead":
-      "أول قائمة من يوتيوب متصلة بالموقع. نقدر نضيف قوائم أخرى (إحماء، دمبل، ماشينز) بنفس الطريقة.",
-    "library.playlist1.title": "حركة وتمديد فقرات الرقبة",
+      "قوائم من يوتيوب Cap Fahmy — عروض يمكن للعملاء متابعتها. نقدر نضيف قوائم أخرى (إحماء، دمبل، ماشينز) بنفس الطريقة.",
+    "library.playlist1.title": "تمارين إطالة ثابتة",
     "library.playlist1.body":
-      "شاهد العروض بالترتيب، أو افتح القائمة كاملة على يوتيوب.",
+      "قائمة كاملة — تصفّح الفيديوهات في المشغّل، أو افتحها على يوتيوب.",
     "library.open": "افتح على يوتيوب",
     "cta.title": "جاهز للتدريب على المدى الطويل؟",
     "cta.body":
