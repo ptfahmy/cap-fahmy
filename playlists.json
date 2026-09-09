@@ -1,0 +1,72 @@
+{
+  "playlists": [
+    {
+      "id": "PLB51Myhdv9lskix2dw5dwFJRUCkIQxIvU",
+      "title": "Static stretches",
+      "titleAr": "تمارين إطالة ثابتة",
+      "url": "https://www.youtube.com/playlist?list=PLB51Myhdv9lskix2dw5dwFJRUCkIQxIvU",
+      "videos": [
+        {
+          "id": "g6Ga0syMYIE",
+          "title": "child pose with lats and QL stretch"
+        },
+        {
+          "id": "j1VXzrpI01U",
+          "title": "pectoralis major stretch on wall"
+        },
+        {
+          "id": "-rJO7IIyxOE",
+          "title": "lats stretch on wall"
+        },
+        {
+          "id": "OZVPlDYg5tk",
+          "title": "child pose stretch"
+        },
+        {
+          "id": "q72x2VQ8Pl0",
+          "title": "cobra stretch"
+        },
+        {
+          "id": "KA13V3I9kjs",
+          "title": "supinated hamstring static stretch with band"
+        },
+        {
+          "id": "_d-74L5coh8",
+          "title": "butterfly for adductors static stretch"
+        },
+        {
+          "id": "a_bp5C7IE8E",
+          "title": "pronated quads static stretch"
+        },
+        {
+          "id": "0gi5zHoA4_A",
+          "title": "hip flexor&quads static stretch"
+        },
+        {
+          "id": "vi2aAsQE-zU",
+          "title": "calf ststic stretch"
+        },
+        {
+          "id": "3tyFoRLmCPw",
+          "title": "hip flexor&soleus static stretch"
+        },
+        {
+          "id": "q5672vXGBkE",
+          "title": "standing hamstring static stretch"
+        },
+        {
+          "id": "4zLhXY-quoI",
+          "title": "quads static stretch on side"
+        },
+        {
+          "id": "MHhiNgkDxws",
+          "title": "standing quads static stretch"
+        },
+        {
+          "id": "K9dptG51Jw8",
+          "title": "glute stretch"
+        }
+      ]
+    }
+  ]
+}

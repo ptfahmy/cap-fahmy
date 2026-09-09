@@ -556,21 +556,70 @@ body[dir="rtl"] .price-card ul {
   border-top: 1px solid var(--line);
 }
 
-.library-grid {
+.library-root {
   display: grid;
-  gap: 1.5rem;
+  gap: 1.25rem;
 }
 
-.library-card {
+.library-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.library-tab {
+  font: inherit;
+  cursor: pointer;
   border: 1px solid var(--line);
-  background: rgba(245, 248, 247, 0.75);
-  overflow: hidden;
+  background: rgba(245, 248, 247, 0.7);
+  color: var(--ink-soft);
+  padding: 0.55rem 0.85rem;
+  border-radius: var(--radius);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.library-tab span {
+  font-size: 0.78rem;
+  color: var(--sea);
+  font-weight: 700;
+}
+
+.library-tab.is-active {
+  border-color: var(--sea);
+  background: rgba(28, 101, 92, 0.08);
+  color: var(--sea-deep);
+}
+
+.library-layout {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.library-player {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.library-player-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.library-player-meta p {
+  margin: 0;
+  color: var(--muted);
 }
 
 .video-frame {
   position: relative;
   aspect-ratio: 16 / 9;
   background: var(--sea-deep);
+  border: 1px solid var(--line);
 }
 
 .video-frame iframe {
@@ -581,26 +630,62 @@ body[dir="rtl"] .price-card ul {
   border: 0;
 }
 
-.library-card-body {
-  padding: 1.25rem 1.35rem 1.5rem;
+.library-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 28rem;
+  overflow: auto;
+  border: 1px solid var(--line);
+  background: rgba(245, 248, 247, 0.75);
+}
+
+.library-item {
+  width: 100%;
   display: grid;
-  gap: 0.65rem;
+  grid-template-columns: auto 1fr;
+  gap: 0.75rem;
+  align-items: start;
+  text-align: start;
+  font: inherit;
+  cursor: pointer;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  background: transparent;
+  color: var(--ink);
+  padding: 0.85rem 1rem;
 }
 
-.library-card-body h3 {
-  margin: 0;
+.library-item:hover,
+.library-item.is-active {
+  background: rgba(28, 101, 92, 0.08);
+}
+
+.library-item-num {
   font-family: var(--font-display);
-  font-size: 1.55rem;
-  font-weight: 600;
+  color: var(--sea);
+  font-size: 1.05rem;
+  line-height: 1.2;
 }
 
-.library-card-body p {
-  margin: 0;
-  color: var(--muted);
+.library-item-title {
+  font-size: 0.95rem;
+  line-height: 1.35;
 }
 
-.library-card-body .btn {
-  justify-self: start;
+body[dir="rtl"] .library-item {
+  text-align: right;
+}
+
+@media (min-width: 900px) {
+  .library-layout {
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: start;
+  }
+
+  .library-list {
+    max-height: 32rem;
+  }
 }
 
 .about-copy p {
@@ -948,11 +1033,6 @@ body[dir="rtl"] .about-aside blockquote {
 
   .pricing {
     grid-template-columns: repeat(3, 1fr);
-  }
-
-  .library-grid {
-    grid-template-columns: 1fr;
-    max-width: 720px;
   }
 
   .session-grid,

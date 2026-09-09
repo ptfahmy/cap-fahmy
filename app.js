@@ -72,6 +72,132 @@
 
     renderPricing();
     updateSelectedTierLabel();
+    renderLibrary();
+  }
+
+  /* Exercise library */
+  const libraryState = {
+    playlists: [],
+    activePlaylistId: null,
+    activeVideoId: null,
+    loaded: false,
+  };
+
+  function playlistTitle(playlist) {
+    return state.lang === "ar" ? playlist.titleAr || playlist.title : playlist.title;
+  }
+
+  function embedUrl(playlistId, videoId) {
+    return `https://www.youtube.com/embed/${videoId}?list=${playlistId}&rel=0`;
+  }
+
+  function renderLibrary() {
+    const root = document.getElementById("library-root");
+    if (!root || !libraryState.loaded) return;
+
+    if (!libraryState.playlists.length) {
+      root.innerHTML = `<p class="hint">${t("library.empty")}</p>`;
+      return;
+    }
+
+    const playlist =
+      libraryState.playlists.find((p) => p.id === libraryState.activePlaylistId) ||
+      libraryState.playlists[0];
+    libraryState.activePlaylistId = playlist.id;
+    if (
+      !libraryState.activeVideoId ||
+      !playlist.videos.some((v) => v.id === libraryState.activeVideoId)
+    ) {
+      libraryState.activeVideoId = playlist.videos[0]?.id || null;
+    }
+
+    const tabs = libraryState.playlists
+      .map(
+        (p) => `
+        <button type="button" class="library-tab ${
+          p.id === playlist.id ? "is-active" : ""
+        }" data-playlist="${p.id}">
+          ${playlistTitle(p)}
+          <span>${p.videos.length}</span>
+        </button>`
+      )
+      .join("");
+
+    const items = playlist.videos
+      .map(
+        (video, index) => `
+        <li>
+          <button type="button" class="library-item ${
+            video.id === libraryState.activeVideoId ? "is-active" : ""
+          }" data-video="${video.id}">
+            <span class="library-item-num">${String(index + 1).padStart(2, "0")}</span>
+            <span class="library-item-title">${video.title}</span>
+          </button>
+        </li>`
+      )
+      .join("");
+
+    root.innerHTML = `
+      <div class="library-tabs" role="tablist">${tabs}</div>
+      <div class="library-layout">
+        <div class="library-player">
+          <div class="video-frame">
+            <iframe
+              id="library-frame"
+              src="${embedUrl(playlist.id, libraryState.activeVideoId)}"
+              title="${playlistTitle(playlist)}"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+              referrerpolicy="strict-origin-when-cross-origin"
+            ></iframe>
+          </div>
+          <div class="library-player-meta">
+            <p><strong>${playlistTitle(playlist)}</strong> · ${
+              playlist.videos.length
+            } ${t("library.count")}</p>
+            <a class="btn btn-ghost" href="${playlist.url}" target="_blank" rel="noopener noreferrer">${t(
+              "library.open"
+            )}</a>
+          </div>
+        </div>
+        <ol class="library-list">${items}</ol>
+      </div>
+    `;
+  }
+
+  function bindLibrary() {
+    const root = document.getElementById("library-root");
+    if (!root) return;
+
+    root.addEventListener("click", (event) => {
+      const tab = event.target.closest("[data-playlist]");
+      if (tab) {
+        libraryState.activePlaylistId = tab.dataset.playlist;
+        libraryState.activeVideoId = null;
+        renderLibrary();
+        return;
+      }
+      const item = event.target.closest("[data-video]");
+      if (item) {
+        libraryState.activeVideoId = item.dataset.video;
+        renderLibrary();
+      }
+    });
+
+    fetch("playlists.json")
+      .then((res) => res.json())
+      .then((data) => {
+        libraryState.playlists = data.playlists || [];
+        libraryState.activePlaylistId = libraryState.playlists[0]?.id || null;
+        libraryState.activeVideoId = libraryState.playlists[0]?.videos?.[0]?.id || null;
+        libraryState.loaded = true;
+        renderLibrary();
+      })
+      .catch(() => {
+        libraryState.loaded = true;
+        libraryState.playlists = [];
+        renderLibrary();
+      });
   }
 
   function renderPricing() {
@@ -269,5 +395,6 @@
   bindLanguage();
   bindCurrency();
   applyI18n();
+  bindLibrary();
   initOnboard();
 })();

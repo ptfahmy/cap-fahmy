@@ -73,11 +73,11 @@ window.CapFahmyI18n = {
     "library.eyebrow": "Exercise library",
     "library.title": "Train with Cap Fahmy’s demos",
     "library.lead":
-      "Playlists from Cap Fahmy’s YouTube — demos clients can follow. More lists (warm-up, dumbbells, machines) can be added the same way.",
-    "library.playlist1.title": "Static stretches",
-    "library.playlist1.body":
-      "Full playlist — browse videos in the player, or open it on YouTube.",
-    "library.open": "Open on YouTube",
+      "Playlists in order — pick a list, then tap any exercise to play it. Send more playlist links to grow the library toward your full 300+.",
+    "library.loading": "Loading playlists…",
+    "library.open": "Open playlist on YouTube",
+    "library.count": "exercises",
+    "library.empty": "No playlists yet.",
     "cta.title": "Ready to train for the long game?",
     "cta.body":
       "Start with the waiver and intake. Upload your movement screen. Your living program follows.",
@@ -256,11 +256,11 @@ window.CapFahmyI18n = {
     "library.eyebrow": "مكتبة التمارين",
     "library.title": "تمرّن مع فيديوهات Cap Fahmy",
     "library.lead":
-      "قوائم من يوتيوب Cap Fahmy — عروض يمكن للعملاء متابعتها. نقدر نضيف قوائم أخرى (إحماء، دمبل، ماشينز) بنفس الطريقة.",
-    "library.playlist1.title": "تمارين إطالة ثابتة",
-    "library.playlist1.body":
-      "قائمة كاملة — تصفّح الفيديوهات في المشغّل، أو افتحها على يوتيوب.",
-    "library.open": "افتح على يوتيوب",
+      "القوائم بالترتيب — اختر قائمة ثم اضغط أي تمرين للتشغيل. ابعت باقي لينكات القوائم عشان نغطي الـ300+ تمرين.",
+    "library.loading": "جاري تحميل القوائم…",
+    "library.open": "افتح القائمة على يوتيوب",
+    "library.count": "تمرين",
+    "library.empty": "لا توجد قوائم بعد.",
     "cta.title": "جاهز للتدريب على المدى الطويل؟",
     "cta.body":
       "ابدأ بالإقرار والاستبيان. ارفع فحص الحركة. ثم يأتي برنامجك الحيّ.",

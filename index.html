@@ -249,39 +249,13 @@
             <p class="eyebrow" data-i18n="library.eyebrow">Exercise library</p>
             <h2 data-i18n="library.title">Train with Cap Fahmy’s demos</h2>
             <p class="section-lead" data-i18n="library.lead">
-              Playlists from Cap Fahmy’s YouTube — demos clients can follow. More
-              lists (warm-up, dumbbells, machines) can be added the same way.
+              Playlists in order — pick a list, then tap any exercise to play it.
+              Send more playlist links to grow the library toward your full 300+.
             </p>
           </header>
 
-          <div class="library-grid">
-            <article class="library-card">
-              <div class="video-frame">
-                <iframe
-                  src="https://www.youtube.com/embed/g6Ga0syMYIE?list=PLB51Myhdv9lskix2dw5dwFJRUCkIQxIvU&rel=0"
-                  title="Static stretches — Cap Fahmy"
-                  loading="lazy"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowfullscreen
-                  referrerpolicy="strict-origin-when-cross-origin"
-                ></iframe>
-              </div>
-              <div class="library-card-body">
-                <h3 data-i18n="library.playlist1.title">Static stretches</h3>
-                <p data-i18n="library.playlist1.body">
-                  Full playlist — browse videos in the player, or open it on
-                  YouTube.
-                </p>
-                <a
-                  class="btn btn-ghost"
-                  href="https://www.youtube.com/playlist?list=PLB51Myhdv9lskix2dw5dwFJRUCkIQxIvU"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  data-i18n="library.open"
-                  >Open on YouTube</a
-                >
-              </div>
-            </article>
+          <div id="library-root" class="library-root" aria-live="polite">
+            <p class="hint" data-i18n="library.loading">Loading playlists…</p>
           </div>
         </div>
       </section>
