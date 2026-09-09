@@ -4,6 +4,7 @@ window.CapFahmyI18n = {
     "nav.philosophy": "Philosophy",
     "nav.how": "How it works",
     "nav.offer": "Offer",
+    "nav.library": "Library",
     "nav.about": "About",
     "nav.cta": "Start coaching",
     "hero.eyebrow": "Personal training · Alexandria, Egypt",
@@ -69,6 +70,14 @@ window.CapFahmyI18n = {
       "Credentials: NASM-CPT, NASM-CNC, NASM-WLS, IASST CPT. Coaching stays within fitness scope. Red-flag symptoms are referred out — this is not physiotherapy or medical care.",
     "about.quote":
       "“I refuse to oversell. If a screen or offer does not help someone get stronger today and more independent tomorrow, it does not belong here.”",
+    "library.eyebrow": "Exercise library",
+    "library.title": "Train with Cap Fahmy’s demos",
+    "library.lead":
+      "First playlist connected from your YouTube. More lists (warm-up, dumbbells, machines) can be added the same way.",
+    "library.playlist1.title": "Neck vertebrae mobility and stretch",
+    "library.playlist1.body":
+      "Watch demos in order, or open the full playlist on YouTube.",
+    "library.open": "Open on YouTube",
     "cta.title": "Ready to train for the long game?",
     "cta.body":
       "Start with the waiver and intake. Upload your movement screen. Your living program follows.",
@@ -178,6 +187,7 @@ window.CapFahmyI18n = {
     "nav.philosophy": "الفلسفة",
     "nav.how": "كيف يعمل",
     "nav.offer": "العرض",
+    "nav.library": "المكتبة",
     "nav.about": "عن المدرب",
     "nav.cta": "ابدأ التدريب",
     "hero.eyebrow": "تدريب شخصي · الإسكندرية، مصر",
@@ -243,6 +253,14 @@ window.CapFahmyI18n = {
       "الشهادات: NASM-CPT و NASM-CNC و NASM-WLS و IASST CPT. التدريب ضمن نطاق اللياقة. الأعراض الحمراء تُحوَّل لجهة مختصة — هذا ليس علاجًا طبيعيًا أو رعاية طبية.",
     "about.quote":
       "«أرفض المبالغة في البيع. إن لم يساعد أي شاشة أو عرض شخصًا ليصبح أقوى اليوم وأكثر استقلالًا غدًا، فلا مكان له هنا.»",
+    "library.eyebrow": "مكتبة التمارين",
+    "library.title": "تمرّن مع فيديوهات Cap Fahmy",
+    "library.lead":
+      "أول قائمة من يوتيوب متصلة بالموقع. نقدر نضيف قوائم أخرى (إحماء، دمبل، ماشينز) بنفس الطريقة.",
+    "library.playlist1.title": "حركة وتمديد فقرات الرقبة",
+    "library.playlist1.body":
+      "شاهد العروض بالترتيب، أو افتح القائمة كاملة على يوتيوب.",
+    "library.open": "افتح على يوتيوب",
     "cta.title": "جاهز للتدريب على المدى الطويل؟",
     "cta.body":
       "ابدأ بالإقرار والاستبيان. ارفع فحص الحركة. ثم يأتي برنامجك الحيّ.",
