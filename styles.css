@@ -254,6 +254,14 @@ button {
   text-transform: uppercase;
 }
 
+.brand-logo {
+  width: 2.35rem;
+  height: 2.35rem;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--line);
+}
+
 .brand-mark {
   width: 0.55rem;
   height: 0.55rem;
@@ -419,6 +427,18 @@ button {
   text-transform: uppercase;
   margin: 0 0 1.5rem;
   color: var(--sand);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.hero-seal {
+  width: 4.25rem;
+  height: 4.25rem;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid rgba(247, 249, 248, 0.2);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
 }
 
 .hero h1 {
@@ -514,6 +534,61 @@ button {
 .pillar-card p {
   margin: 0;
   color: var(--muted);
+}
+
+.pillar-meta {
+  margin-top: 0.85rem !important;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--sea) !important;
+}
+
+.logo-story {
+  display: grid;
+  gap: 2rem;
+  margin-bottom: clamp(2.5rem, 6vw, 3.5rem);
+  align-items: center;
+}
+
+.logo-story-art {
+  margin: 0;
+  border: 1px solid var(--line);
+  background: #f3efe6;
+  overflow: hidden;
+}
+
+.logo-story-art img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.logo-story-copy h3 {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  letter-spacing: -0.02em;
+  margin: 0 0 1rem;
+}
+
+.logo-story-copy p {
+  color: var(--muted);
+  margin: 0 0 1rem;
+  max-width: 34rem;
+}
+
+.logo-mark-inline {
+  margin-top: 0.5rem;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+
+@media (min-width: 900px) {
+  .logo-story {
+    grid-template-columns: 1.15fr 0.85fr;
+  }
 }
 
 @media (min-width: 760px) {
@@ -1086,6 +1161,17 @@ button {
   text-transform: uppercase;
   font-weight: 700;
   margin: 0 0 0.35rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.footer-logo {
+  width: 2.1rem;
+  height: 2.1rem;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--line);
 }
 
 .footer-slogan {

@@ -19,6 +19,12 @@ window.CapFahmyI18n = {
     "pillars.mindset.t": "Mindset",
     "pillars.mindset.b":
       "A strong body is more useful when supported by a resilient mind.",
+    "logo.eyebrow": "The logo",
+    "logo.title": "WHY THIS MARK EXISTS",
+    "logo.p1":
+      "FAHMY is built like a living tree. Strength is visible in the trunk — but the roots are Recovery, Connection, and Mindset. Health and wellness sit under the name because fitness alone is never the whole story.",
+    "logo.p2":
+      "The circular mark shows the same idea as a journey: from stone to life, roots to growth — Strong Today. Independent Tomorrow.",
     "iceberg.eyebrow": "Function before appearance",
     "iceberg.title": "LOOKING FIT IS VISIBLE. FUNCTION IS EXPERIENCED.",
     "iceberg.above": "Above the surface",
@@ -150,6 +156,12 @@ window.CapFahmyI18n = {
     "pillars.connection.b": "الصحة موجودة أيضًا خارج المجموعات والتكرارات.",
     "pillars.mindset.t": "العقلية",
     "pillars.mindset.b": "الجسم القوي أنفع عندما يسنده عقل مرن.",
+    "logo.eyebrow": "الشعار",
+    "logo.title": "لماذا هذا الرمز",
+    "logo.p1":
+      "FAHMY مبني كشجرة حية. القوة ظاهرة في الجذع — لكن الجذور هي التعافي والتواصل والعقلية. Health و Wellness تحت الاسم لأن اللياقة وحدها ليست القصة كاملة.",
+    "logo.p2":
+      "الرمز الدائري يحكي نفس الرحلة: من الحجر إلى الحياة، من الجذور إلى النمو — قوي اليوم. مستقل غدًا.",
     "iceberg.eyebrow": "الوظيفة قبل المظهر",
     "iceberg.title": "المظهر يظهر. الوظيفة تُعاش.",
     "iceberg.above": "فوق السطح",
