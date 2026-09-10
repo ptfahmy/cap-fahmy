@@ -104,10 +104,31 @@ window.CapFahmyI18n = {
     "long.body":
       "The ultimate goal isn’t simply lifting more today. It is preserving your ability to walk, move, travel, work, play, get up, carry things, and live independently for as long as possible.",
     "long.slogan": "Strong Today. Independent Tomorrow.",
+    "history.eyebrow": "Folder of history",
+    "history.title": "MY SHAPES CHANGED. MY LESSON DID TOO.",
+    "history.lead":
+      "This isn’t a before-and-after sales pitch. It’s the path that taught Cap Fahmy why looking lean is not the same as being healthy.",
+    "history.f1.tab": "01 · The start",
+    "history.f1.title": "I was overweight — and inspired by an image",
+    "history.f1.body":
+      "A Jason Statham photo made me walk into the gym. I wanted that look. That spark mattered — but chasing a picture is not the same as building a life you can sustain.",
+    "history.f1.caption": "2014 — the post that pulled me toward the gym.",
+    "history.f2.tab": "02 · Looking the part",
+    "history.f2.title": "I got lean. I still wasn’t truly healthy.",
+    "history.f2.body":
+      "The mirror changed. The abs showed up. And yet — low energy, incomplete recovery, pressure on mindset, and a version of “fit” that didn’t carry into how I lived. Looking the part is visible. Function and health are experienced.",
+    "history.f3.tab": "03 · The real file",
+    "history.f3.title": "It’s mindset — and everything under the surface",
+    "history.f3.body":
+      "Strength without recovery burns out. Aesthetics without movement quality break down. Connection and mindset are not extras — they are part of the program. That is why Cap Fahmy coaches the whole picture: Strong Today. Independent Tomorrow.",
+    "history.p1": "Strength",
+    "history.p2": "Recovery",
+    "history.p3": "Connection",
+    "history.p4": "Mindset",
     "about.eyebrow": "About Cap Fahmy",
     "about.title": "FROM TRAINING BODIES TO UNDERSTANDING MOVEMENT.",
     "about.p1":
-      "Ahmed Fahmy is a Personal Trainer whose philosophy evolved beyond appearance-based fitness toward movement quality, assessment, recovery, functionality, and long-term health.",
+      "Ahmed Fahmy is a Personal Trainer whose philosophy grew from chasing a look to understanding movement, recovery, mindset, and long-term health — after learning the hard way that lean is not the same as healthy.",
     "about.p2":
       "Based in Alexandria, Egypt — coaching at Gold’s Gym El Montaza Grand Parks. Engineer by training. Evidence-based by practice. Within fitness scope — red-flag symptoms are referred out.",
     "about.cta": "My Story",
@@ -239,10 +260,31 @@ window.CapFahmyI18n = {
     "long.body":
       "الهدف النهائي ليس رفع أوزان أكثر اليوم فقط. بل الحفاظ على قدرتك على المشي والحركة والسفر والعمل واللعب والنهوض وحمل الأشياء والعيش باستقلال لأطول وقت ممكن.",
     "long.slogan": "قوي اليوم. مستقل غدًا.",
+    "history.eyebrow": "مجلد التاريخ",
+    "history.title": "أشكالي تغيّرت. درسي تغيّر أيضًا.",
+    "history.lead":
+      "هذه ليست قصة قبل/بعد للبيع. هذا المسار الذي علّم Cap Fahmy لماذا المظهر النحيف ليس هو الصحة.",
+    "history.f1.tab": "٠١ · البداية",
+    "history.f1.title": "كنت زائد الوزن — وصورة ألهمتني",
+    "history.f1.body":
+      "صورة لـ Jason Statham جعلتني أدخل الصالة. أردت هذا الشكل. الشرارة مهمة — لكن ملاحقة صورة ليست كبناء حياة تستطيع الاستمرار عليها.",
+    "history.f1.caption": "٢٠١٤ — المنشور الذي سحبني نحو الصالة.",
+    "history.f2.tab": "٠٢ · شكل يليق بالصورة",
+    "history.f2.title": "نحفت. وما زلت لم أكن بصحة حقيقية.",
+    "history.f2.body":
+      "المرآة تغيّرت. ظهرت العضلات. ومع ذلك — طاقة منخفضة وتعافٍ ناقص وضغط على العقلية ونسخة من «اللياقة» لا تنتقل لحياتي. المظهر يظهر. الصحة والوظيفة تُعاشان.",
+    "history.f3.tab": "٠٣ · الملف الحقيقي",
+    "history.f3.title": "المسألة عقلية — وكل ما تحت السطح",
+    "history.f3.body":
+      "القوة بلا تعافٍ تحترق. الجماليات بلا جودة حركة تنهار. التواصل والعقلية ليسا إضافات — هما جزء من البرنامج. لهذا يدرّب Cap Fahmy الصورة كاملة: قوي اليوم. مستقل غدًا.",
+    "history.p1": "القوة",
+    "history.p2": "التعافي",
+    "history.p3": "التواصل",
+    "history.p4": "العقلية",
     "about.eyebrow": "عن Cap Fahmy",
     "about.title": "من تدريب الأجسام إلى فهم الحركة.",
     "about.p1":
-      "أحمد فهمي مدرب شخصي تطورت فلسفته من لياقة المظهر إلى جودة الحركة والتقييم والتعافي والوظيفة والصحة طويلة الأمد.",
+      "أحمد فهمي مدرب شخصي نمت فلسفته من ملاحقة شكل معيّن إلى فهم الحركة والتعافي والعقلية والصحة طويلة الأمد — بعد أن تعلّم بالطريقة الصعبة أن النحافة ليست هي الصحة.",
     "about.p2":
       "في الإسكندرية، مصر — يدرّب في Gold’s Gym El Montaza Grand Parks. مهندس تكوينًا. مبني على الدليل ممارسةً. ضمن نطاق اللياقة — الأعراض الحمراء تُحوَّل.",
     "about.cta": "قصتي",

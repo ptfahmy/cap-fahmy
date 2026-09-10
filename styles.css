@@ -926,13 +926,152 @@ button {
   background:
     linear-gradient(160deg, rgba(31, 95, 87, 0.35), transparent 50%),
     linear-gradient(180deg, #1a2e29, #0a1210);
+  overflow: hidden;
+  position: relative;
+}
+
+.about-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+/* History folder */
+.history-folder {
   display: grid;
-  place-items: end start;
-  padding: 1.25rem;
-  color: rgba(247, 249, 248, 0.55);
-  font-size: 0.8rem;
+  gap: 1.5rem;
+}
+
+.history-file {
+  border: 1px solid var(--line);
+  background: var(--paper-elevated);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.history-file-label {
+  background: var(--sea-deep);
+  color: var(--white);
+  padding: 0.65rem 1.1rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.history-file-grid {
+  display: grid;
+  gap: 1.25rem;
+  padding: 1.35rem;
+}
+
+.history-photos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.65rem;
+}
+
+.history-photos img,
+.history-spark img,
+.history-photos--lean img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border: 1px solid var(--line);
+  min-height: 180px;
+  max-height: 280px;
+}
+
+.history-photos--lean {
+  grid-template-columns: 1.1fr 0.9fr;
+}
+
+.history-copy h3 {
+  margin: 0 0 0.75rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 2.5vw, 1.85rem);
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.history-copy p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.history-spark {
+  margin: 0;
+  padding: 0 1.35rem 1.35rem;
+}
+
+.history-spark img {
+  max-height: 420px;
+  object-fit: contain;
+  background: #111;
+  min-height: auto;
+}
+
+.history-spark figcaption {
+  margin-top: 0.65rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.history-file--lesson {
+  background: linear-gradient(160deg, rgba(31, 95, 87, 0.08), var(--paper-elevated));
+}
+
+.history-lesson {
+  padding: 1.5rem 1.35rem 1.75rem;
+}
+
+.history-lesson h3 {
+  margin: 0 0 0.75rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.45rem, 3vw, 2rem);
+  letter-spacing: -0.02em;
+}
+
+.history-lesson p {
+  margin: 0 0 1.25rem;
+  color: var(--muted);
+  max-width: 40rem;
+}
+
+.history-pillars {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0;
+  margin: 0 0 1.5rem;
+}
+
+.history-pillars li {
+  border: 1px solid var(--sea);
+  color: var(--sea-deep);
+  padding: 0.4rem 0.75rem;
+  font-size: 0.78rem;
+  font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+}
+
+@media (min-width: 860px) {
+  .history-file-grid {
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+  }
+
+  .history-file-grid--reverse {
+    grid-template-columns: 0.9fr 1.1fr;
+  }
+
+  .history-file-grid--reverse .history-copy {
+    order: -1;
+  }
 }
 
 .creds {
