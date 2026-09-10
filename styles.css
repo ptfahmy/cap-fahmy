@@ -387,30 +387,62 @@ button {
 .hero-media {
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(105deg, rgba(10, 18, 16, 0.92) 0%, rgba(10, 18, 16, 0.55) 48%, rgba(10, 18, 16, 0.35) 100%),
-    linear-gradient(180deg, transparent 45%, rgba(10, 18, 16, 0.85) 100%),
-    radial-gradient(ellipse at 72% 40%, #1f5f57 0%, #0f3a35 40%, #071210 75%);
+  background: var(--dark);
 }
 
-.hero-media::after {
-  content: "";
+.hero-cover {
   position: absolute;
   inset: 0;
-  background-image: url("assets/hero-placeholder.svg");
-  background-size: cover;
-  background-position: center;
-  opacity: 0.35;
-  mix-blend-mode: luminosity;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 58% 18%;
+  transform: scale(1.02);
+  filter: contrast(1.05) saturate(0.92);
+}
+
+.hero-veil {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      105deg,
+      rgba(8, 14, 12, 0.88) 0%,
+      rgba(8, 14, 12, 0.55) 42%,
+      rgba(8, 14, 12, 0.28) 68%,
+      rgba(8, 14, 12, 0.4) 100%
+    ),
+    linear-gradient(180deg, rgba(8, 14, 12, 0.25) 0%, transparent 35%, rgba(8, 14, 12, 0.82) 100%);
+  pointer-events: none;
 }
 
 .hero-grain {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 18% 80%, rgba(168, 181, 174, 0.18), transparent 35%),
-    radial-gradient(circle at 88% 18%, rgba(255, 255, 255, 0.08), transparent 28%);
+    radial-gradient(circle at 18% 80%, rgba(168, 181, 174, 0.12), transparent 35%),
+    radial-gradient(circle at 88% 18%, rgba(255, 255, 255, 0.05), transparent 28%);
   animation: drift 20s ease-in-out infinite alternate;
+  pointer-events: none;
+  mix-blend-mode: soft-light;
+  opacity: 0.7;
+}
+
+@media (max-width: 720px) {
+  .hero-cover {
+    object-position: 62% 12%;
+  }
+
+  .hero-veil {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(8, 14, 12, 0.45) 0%,
+        rgba(8, 14, 12, 0.35) 40%,
+        rgba(8, 14, 12, 0.88) 100%
+      ),
+      linear-gradient(90deg, rgba(8, 14, 12, 0.55) 0%, rgba(8, 14, 12, 0.2) 100%);
+  }
 }
 
 .hero-content {
