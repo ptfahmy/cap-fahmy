@@ -396,9 +396,9 @@ button {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 55% 8%;
-  transform: scale(1.01);
-  filter: contrast(1.12) saturate(1.02) brightness(1.08);
+  object-position: 50% 22%;
+  transform: scale(1.02);
+  filter: contrast(1.1) saturate(1.05) brightness(1.06);
 }
 
 .hero-veil {
@@ -407,13 +407,12 @@ button {
   background:
     linear-gradient(
       100deg,
-      rgba(8, 14, 12, 0.82) 0%,
-      rgba(8, 14, 12, 0.45) 28%,
-      rgba(8, 14, 12, 0.08) 52%,
-      rgba(8, 14, 12, 0.02) 72%,
-      rgba(8, 14, 12, 0.12) 100%
+      rgba(8, 14, 12, 0.78) 0%,
+      rgba(8, 14, 12, 0.35) 30%,
+      rgba(8, 14, 12, 0.05) 55%,
+      rgba(8, 14, 12, 0.08) 100%
     ),
-    linear-gradient(180deg, rgba(8, 14, 12, 0.15) 0%, transparent 28%, rgba(8, 14, 12, 0.55) 100%);
+    linear-gradient(180deg, rgba(8, 14, 12, 0.12) 0%, transparent 30%, rgba(8, 14, 12, 0.62) 100%);
   pointer-events: none;
 }
 
@@ -426,24 +425,24 @@ button {
   animation: drift 20s ease-in-out infinite alternate;
   pointer-events: none;
   mix-blend-mode: soft-light;
-  opacity: 0.35;
+  opacity: 0.3;
 }
 
 @media (max-width: 720px) {
   .hero-cover {
-    object-position: 58% 5%;
-    filter: contrast(1.14) saturate(1.04) brightness(1.1);
+    object-position: 50% 18%;
+    filter: contrast(1.12) saturate(1.06) brightness(1.08);
   }
 
   .hero-veil {
     background:
       linear-gradient(
         180deg,
-        rgba(8, 14, 12, 0.2) 0%,
-        rgba(8, 14, 12, 0.08) 42%,
-        rgba(8, 14, 12, 0.78) 100%
+        rgba(8, 14, 12, 0.18) 0%,
+        rgba(8, 14, 12, 0.05) 40%,
+        rgba(8, 14, 12, 0.8) 100%
       ),
-      linear-gradient(90deg, rgba(8, 14, 12, 0.55) 0%, rgba(8, 14, 12, 0.05) 55%, transparent 100%);
+      linear-gradient(90deg, rgba(8, 14, 12, 0.5) 0%, rgba(8, 14, 12, 0.05) 60%, transparent 100%);
   }
 }
 
@@ -461,7 +460,7 @@ button {
   }
 
   .hero-cover {
-    object-position: 62% 6%;
+    object-position: 48% 20%;
   }
 }
 
