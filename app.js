@@ -1,29 +1,90 @@
 (function () {
+  const COMPARE = [
+    {
+      id: "feet",
+      label: "Flat feet / pronation",
+      labelAr: "قدم مسطحة / فرط كبّ",
+      not: "Jumping straight into high-impact running volume without addressing foot control.",
+      notAr: "القفز مباشرة إلى جري عالي التأثير بدون بناء تحكم في القدم.",
+      better:
+        "Build foot strength, control, and progressive loading — then add impact as capacity allows.",
+      betterAr:
+        "ابنِ قوة القدم والتحكم والتحميل التدريجي — ثم أضف الصدمات عندما تسمح القدرة.",
+    },
+    {
+      id: "kyphosis",
+      label: "Kyphotic posture",
+      labelAr: "وضعية محدّبة",
+      not: "Loading heavy pressing patterns before restoring thoracic mobility and scapular control.",
+      notAr: "تحميل ضغط ثقيل قبل استعادة حركية الصدر وتحكم لوح الكتف.",
+      better:
+        "Prioritize mobility, breathing, and controlled pulling/pressing progressions that match current range.",
+      betterAr:
+        "أعطِ أولوية للحركية والتنفس وتدرّج السحب/الضغط بما يناسب المدى الحالي.",
+    },
+    {
+      id: "shoulder",
+      label: "Limited shoulder mobility",
+      labelAr: "محدودية حركة الكتف",
+      not: "Forcing a full overhead barbell position that the shoulder can’t own yet.",
+      notAr: "فرض وضعية بار فوق الرأس لا يملكها الكتف بعد.",
+      better:
+        "Use ranges and tools the person can control (landmine, partial ROM, tempo) while restoring mobility.",
+      betterAr:
+        "استخدم مدى وأدوات يمكن التحكم بها (لاندماين، مدى جزئي، تمبو) مع استعادة الحركية.",
+    },
+    {
+      id: "hip",
+      label: "Limited hip mobility",
+      labelAr: "محدودية حركة الورك",
+      not: "Deep loaded squats as a default before the hips can find a stable path.",
+      notAr: "سكوات عميق محمول كافتراضي قبل أن يجد الورك مسارًا مستقرًا.",
+      better:
+        "Choose squat variations and depths the person owns — then expand range with intent.",
+      betterAr:
+        "اختر تنويعات وعمق سكوات يملكها الشخص — ثم وسّع المدى بقصد.",
+    },
+    {
+      id: "balance",
+      label: "Poor balance",
+      labelAr: "توازن ضعيف",
+      not: "Advanced single-leg power work before basic stability is reliable.",
+      notAr: "تمارين قوة على رجل واحدة متقدمة قبل ثبات أساسي موثوق.",
+      better:
+        "Train stable single-leg strength and control first, then progress complexity.",
+      betterAr: "درّب قوة وتحكمًا على رجل واحدة بثبات أولًا، ثم زِد التعقيد.",
+    },
+    {
+      id: "beginner",
+      label: "Beginner strength",
+      labelAr: "قوة للمبتدئين",
+      not: "Copying advanced hypertrophy splits with no movement foundation.",
+      notAr: "نسخ برامج تضخم متقدمة بلا أساس حركة.",
+      better:
+        "Own basic patterns, recover well, and progress load gradually — consistency over complexity.",
+      betterAr:
+        "أتقن الأنماط الأساسية وتعافَ جيدًا وزِد الحمل تدريجيًا — الانتظام أهم من التعقيد.",
+    },
+  ];
+
   const TIERS = [
-    {
-      id: "foundation",
-      featured: false,
-      egp: 2500,
-      usd: 79,
-    },
-    {
-      id: "standard",
-      featured: true,
-      egp: 4000,
-      usd: 129,
-    },
-    {
-      id: "focused",
-      featured: false,
-      egp: 6000,
-      usd: 189,
-    },
+    { id: "foundation", featured: false, egp: 2500, usd: 79 },
+    { id: "standard", featured: true, egp: 4000, usd: 129 },
+    { id: "focused", featured: false, egp: 6000, usd: 189 },
   ];
 
   const state = {
     lang: localStorage.getItem("capfahmy-lang") || "en",
     currency: localStorage.getItem("capfahmy-currency") || "EGP",
     tier: localStorage.getItem("capfahmy-tier") || "standard",
+    compareId: COMPARE[0].id,
+  };
+
+  const libraryState = {
+    playlists: [],
+    activePlaylistId: null,
+    activeVideoId: null,
+    loaded: false,
   };
 
   function t(key) {
@@ -52,39 +113,121 @@
     document.body.dir = state.lang === "ar" ? "rtl" : "ltr";
 
     document.querySelectorAll("[data-i18n]").forEach((el) => {
-      const key = el.getAttribute("data-i18n");
-      el.textContent = t(key);
+      el.textContent = t(el.getAttribute("data-i18n"));
     });
 
     document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
-      const key = el.getAttribute("data-i18n-placeholder");
-      el.setAttribute("placeholder", t(key));
+      el.setAttribute(
+        "placeholder",
+        t(el.getAttribute("data-i18n-placeholder"))
+      );
     });
 
     const toggle = document.getElementById("lang-toggle");
     if (toggle) {
       toggle.textContent = state.lang === "ar" ? "English" : "عربي";
-      toggle.setAttribute(
-        "aria-label",
-        state.lang === "ar" ? "Switch to English" : "التبديل إلى العربية"
-      );
     }
 
+    renderCompare();
     renderPricing();
     updateSelectedTierLabel();
     renderLibrary();
   }
 
-  /* Exercise library */
-  const libraryState = {
-    playlists: [],
-    activePlaylistId: null,
-    activeVideoId: null,
-    loaded: false,
-  };
+  function bindLanguage() {
+    const toggle = document.getElementById("lang-toggle");
+    if (!toggle) return;
+    toggle.addEventListener("click", () => {
+      state.lang = state.lang === "ar" ? "en" : "ar";
+      localStorage.setItem("capfahmy-lang", state.lang);
+      applyI18n();
+    });
+  }
+
+  function bindMenu() {
+    const btn = document.getElementById("menu-toggle");
+    const panel = document.getElementById("mobile-nav");
+    if (!btn || !panel) return;
+
+    const close = () => {
+      panel.classList.remove("is-open");
+      panel.hidden = true;
+      btn.setAttribute("aria-expanded", "false");
+    };
+
+    btn.addEventListener("click", () => {
+      const open = panel.classList.toggle("is-open");
+      panel.hidden = !open;
+      btn.setAttribute("aria-expanded", String(open));
+    });
+
+    panel.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", close);
+    });
+  }
+
+  function bindReveal() {
+    const nodes = document.querySelectorAll(".reveal");
+    if (!nodes.length || !("IntersectionObserver" in window)) {
+      nodes.forEach((n) => n.classList.add("is-visible"));
+      return;
+    }
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            io.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
+    );
+    nodes.forEach((n) => io.observe(n));
+  }
+
+  function renderCompare() {
+    const tabs = document.getElementById("compare-tabs");
+    const board = document.getElementById("compare-board");
+    if (!tabs || !board) return;
+
+    const active =
+      COMPARE.find((item) => item.id === state.compareId) || COMPARE[0];
+
+    tabs.innerHTML = COMPARE.map((item) => {
+      const label = state.lang === "ar" ? item.labelAr : item.label;
+      return `<button type="button" class="compare-tab ${
+        item.id === active.id ? "is-active" : ""
+      }" data-compare="${item.id}" role="tab">${label}</button>`;
+    }).join("");
+
+    board.innerHTML = `
+      <article class="compare-panel">
+        <h3>${t("compare.not")}</h3>
+        <p>${state.lang === "ar" ? active.notAr : active.not}</p>
+      </article>
+      <article class="compare-panel compare-panel--alt">
+        <h3>${t("compare.better")}</h3>
+        <p>${state.lang === "ar" ? active.betterAr : active.better}</p>
+      </article>
+    `;
+  }
+
+  function bindCompare() {
+    const tabs = document.getElementById("compare-tabs");
+    if (!tabs) return;
+    tabs.addEventListener("click", (event) => {
+      const btn = event.target.closest("[data-compare]");
+      if (!btn) return;
+      state.compareId = btn.dataset.compare;
+      renderCompare();
+    });
+  }
 
   function playlistTitle(playlist) {
-    return state.lang === "ar" ? playlist.titleAr || playlist.title : playlist.title;
+    return state.lang === "ar"
+      ? playlist.titleAr || playlist.title
+      : playlist.title;
   }
 
   function embedUrl(playlistId, videoId) {
@@ -101,8 +244,9 @@
     }
 
     const playlist =
-      libraryState.playlists.find((p) => p.id === libraryState.activePlaylistId) ||
-      libraryState.playlists[0];
+      libraryState.playlists.find(
+        (p) => p.id === libraryState.activePlaylistId
+      ) || libraryState.playlists[0];
     libraryState.activePlaylistId = playlist.id;
     if (
       !libraryState.activeVideoId ||
@@ -130,7 +274,10 @@
           <button type="button" class="library-item ${
             video.id === libraryState.activeVideoId ? "is-active" : ""
           }" data-video="${video.id}">
-            <span class="library-item-num">${String(index + 1).padStart(2, "0")}</span>
+            <span class="library-item-num">${String(index + 1).padStart(
+              2,
+              "0"
+            )}</span>
             <span class="library-item-title">${video.title}</span>
           </button>
         </li>`
@@ -138,12 +285,11 @@
       .join("");
 
     root.innerHTML = `
-      <div class="library-tabs" role="tablist">${tabs}</div>
+      <div class="library-tabs">${tabs}</div>
       <div class="library-layout">
         <div class="library-player">
           <div class="video-frame">
             <iframe
-              id="library-frame"
               src="${embedUrl(playlist.id, libraryState.activeVideoId)}"
               title="${playlistTitle(playlist)}"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -189,7 +335,8 @@
       .then((data) => {
         libraryState.playlists = data.playlists || [];
         libraryState.activePlaylistId = libraryState.playlists[0]?.id || null;
-        libraryState.activeVideoId = libraryState.playlists[0]?.videos?.[0]?.id || null;
+        libraryState.activeVideoId =
+          libraryState.playlists[0]?.videos?.[0]?.id || null;
         libraryState.loaded = true;
         renderLibrary();
       })
@@ -203,27 +350,21 @@
   function renderPricing() {
     const root = document.getElementById("pricing");
     if (!root) return;
-
     root.innerHTML = TIERS.map((tier) => {
       const amount = state.currency === "EGP" ? tier.egp : tier.usd;
       const features = [1, 2, 3]
-        .map(
-          (n) =>
-            `<li>${t(`pricing.${tier.id}.f${n}`)}</li>`
-        )
+        .map((n) => `<li>${t(`pricing.${tier.id}.f${n}`)}</li>`)
         .join("");
-
       return `
         <article class="price-card ${tier.featured ? "is-featured" : ""}">
           <h3>${t(`pricing.${tier.id}.name`)}</h3>
-          <p class="price-amount">${formatPrice(amount, state.currency)}<span style="font-size:0.85rem;font-weight:500;color:var(--muted)"> / mo</span></p>
+          <p class="price-amount">${formatPrice(amount, state.currency)}</p>
           <p>${t(`pricing.${tier.id}.desc`)}</p>
           <ul>${features}</ul>
           <a class="btn ${tier.featured ? "btn-primary" : "btn-ghost"}" href="onboard.html?tier=${tier.id}">
             ${t("pricing.cta")}
           </a>
-        </article>
-      `;
+        </article>`;
     }).join("");
   }
 
@@ -236,16 +377,6 @@
       amount,
       state.currency
     )}`;
-  }
-
-  function bindLanguage() {
-    const toggle = document.getElementById("lang-toggle");
-    if (!toggle) return;
-    toggle.addEventListener("click", () => {
-      state.lang = state.lang === "ar" ? "en" : "ar";
-      localStorage.setItem("capfahmy-lang", state.lang);
-      applyI18n();
-    });
   }
 
   function bindCurrency() {
@@ -272,7 +403,6 @@
     }
   }
 
-  /* Onboarding wizard */
   function initOnboard() {
     const form = document.getElementById("onboard-form");
     if (!form) return;
@@ -325,7 +455,7 @@
         const ack1 = document.getElementById("waiver-ack-1");
         const ack2 = document.getElementById("waiver-ack-2");
         const name = document.getElementById("waiver-name");
-        if (!ack1.checked || !ack2.checked || !name.value.trim()) {
+        if (!ack1?.checked || !ack2?.checked || !name?.value.trim()) {
           showAlert(t("waiver.blocked"));
           return;
         }
@@ -341,7 +471,9 @@
 
       if (step === 1) {
         const required = ["intake-name", "intake-email", "intake-phone", "intake-goal"];
-        const missing = required.some((id) => !document.getElementById(id).value.trim());
+        const missing = required.some(
+          (id) => !document.getElementById(id)?.value.trim()
+        );
         if (missing) {
           showAlert(
             state.lang === "ar"
@@ -354,7 +486,7 @@
 
       if (step === 3) {
         const payAck = document.getElementById("pay-ack");
-        if (!payAck.checked) {
+        if (!payAck?.checked) {
           showAlert(
             state.lang === "ar"
               ? "أكد فهمك لطريقة الدفع للمتابعة."
@@ -362,26 +494,27 @@
           );
           return;
         }
-
-        const payload = {
-          waiver: JSON.parse(localStorage.getItem("capfahmy-waiver") || "{}"),
-          tier: state.tier,
-          currency: state.currency,
-          lang: state.lang,
-          intake: {
-            name: document.getElementById("intake-name").value.trim(),
-            email: document.getElementById("intake-email").value.trim(),
-            phone: document.getElementById("intake-phone").value.trim(),
-            city: document.getElementById("intake-city").value.trim(),
-            goal: document.getElementById("intake-goal").value.trim(),
-            history: document.getElementById("intake-history").value.trim(),
-            health: document.getElementById("intake-health").value.trim(),
-            equipment: document.getElementById("intake-equipment").value.trim(),
-            schedule: document.getElementById("intake-schedule").value.trim(),
-          },
-          submittedAt: new Date().toISOString(),
-        };
-        localStorage.setItem("capfahmy-intake", JSON.stringify(payload));
+        localStorage.setItem(
+          "capfahmy-intake",
+          JSON.stringify({
+            waiver: JSON.parse(localStorage.getItem("capfahmy-waiver") || "{}"),
+            tier: state.tier,
+            currency: state.currency,
+            lang: state.lang,
+            intake: {
+              name: document.getElementById("intake-name").value.trim(),
+              email: document.getElementById("intake-email").value.trim(),
+              phone: document.getElementById("intake-phone").value.trim(),
+              city: document.getElementById("intake-city").value.trim(),
+              goal: document.getElementById("intake-goal").value.trim(),
+              history: document.getElementById("intake-history").value.trim(),
+              health: document.getElementById("intake-health").value.trim(),
+              equipment: document.getElementById("intake-equipment").value.trim(),
+              schedule: document.getElementById("intake-schedule").value.trim(),
+            },
+            submittedAt: new Date().toISOString(),
+          })
+        );
         showStep(4);
         return;
       }
@@ -392,9 +525,20 @@
     showStep(0);
   }
 
+  function setFooterYear() {
+    const el = document.getElementById("footer-year");
+    if (el) {
+      el.textContent = `© ${new Date().getFullYear()} Cap Fahmy. Fitness coaching — not medical advice.`;
+    }
+  }
+
   bindLanguage();
+  bindMenu();
   bindCurrency();
-  applyI18n();
+  bindCompare();
+  bindReveal();
   bindLibrary();
+  applyI18n();
   initOnboard();
+  setFooterYear();
 })();

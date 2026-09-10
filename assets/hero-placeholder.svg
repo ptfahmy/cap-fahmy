@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" fill="none">
+  <rect width="1600" height="1000" fill="#0a1210"/>
+  <circle cx="1100" cy="420" r="280" fill="#1f5f57" opacity="0.35"/>
+  <circle cx="980" cy="520" r="180" fill="#2a6b62" opacity="0.25"/>
+  <path d="M820 780c40-160 120-260 220-300 100-40 210-20 280 40" stroke="#a8b5ae" stroke-width="2" opacity="0.35"/>
+  <path d="M760 820c60-120 160-200 280-220" stroke="#f7f9f8" stroke-width="1.5" opacity="0.2"/>
+  <text x="80" y="920" fill="#a8b5ae" font-family="Georgia, serif" font-size="28" opacity="0.55">Replace with Cap Fahmy cinematic photo</text>
+</svg>
