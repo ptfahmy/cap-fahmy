@@ -396,9 +396,9 @@ button {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 58% 18%;
-  transform: scale(1.02);
-  filter: contrast(1.05) saturate(0.92);
+  object-position: 50% 12%;
+  transform: scale(1.04);
+  filter: contrast(1.06) saturate(0.88) brightness(0.96);
 }
 
 .hero-veil {
@@ -407,12 +407,12 @@ button {
   background:
     linear-gradient(
       105deg,
-      rgba(8, 14, 12, 0.88) 0%,
-      rgba(8, 14, 12, 0.55) 42%,
-      rgba(8, 14, 12, 0.28) 68%,
-      rgba(8, 14, 12, 0.4) 100%
+      rgba(8, 14, 12, 0.9) 0%,
+      rgba(8, 14, 12, 0.58) 40%,
+      rgba(8, 14, 12, 0.32) 70%,
+      rgba(8, 14, 12, 0.45) 100%
     ),
-    linear-gradient(180deg, rgba(8, 14, 12, 0.25) 0%, transparent 35%, rgba(8, 14, 12, 0.82) 100%);
+    linear-gradient(180deg, rgba(8, 14, 12, 0.3) 0%, transparent 32%, rgba(8, 14, 12, 0.86) 100%);
   pointer-events: none;
 }
 
@@ -420,28 +420,28 @@ button {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 18% 80%, rgba(168, 181, 174, 0.12), transparent 35%),
-    radial-gradient(circle at 88% 18%, rgba(255, 255, 255, 0.05), transparent 28%);
+    radial-gradient(circle at 18% 80%, rgba(168, 181, 174, 0.1), transparent 35%),
+    radial-gradient(circle at 88% 18%, rgba(255, 255, 255, 0.04), transparent 28%);
   animation: drift 20s ease-in-out infinite alternate;
   pointer-events: none;
   mix-blend-mode: soft-light;
-  opacity: 0.7;
+  opacity: 0.65;
 }
 
 @media (max-width: 720px) {
   .hero-cover {
-    object-position: 62% 12%;
+    object-position: 52% 8%;
   }
 
   .hero-veil {
     background:
       linear-gradient(
         180deg,
-        rgba(8, 14, 12, 0.45) 0%,
-        rgba(8, 14, 12, 0.35) 40%,
-        rgba(8, 14, 12, 0.88) 100%
+        rgba(8, 14, 12, 0.5) 0%,
+        rgba(8, 14, 12, 0.38) 38%,
+        rgba(8, 14, 12, 0.9) 100%
       ),
-      linear-gradient(90deg, rgba(8, 14, 12, 0.55) 0%, rgba(8, 14, 12, 0.2) 100%);
+      linear-gradient(90deg, rgba(8, 14, 12, 0.62) 0%, rgba(8, 14, 12, 0.22) 100%);
   }
 }
 
